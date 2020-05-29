@@ -11,7 +11,7 @@ These repo contains 4 images in total:
 All the images can be created using this command: 
 `docker-compose -f docker-compose-build.yaml build --parallel`
 
-In order to use these images in a kubernetes environment, all the YAML files in /K8s directory have to be used:
+In order to use these images in a kubernetes environment, all the YAML files under k8s directory have to be used:
 ```
 kubectl apply -f env-configmap.yaml
 kubectl apply -f env-secret.yaml
