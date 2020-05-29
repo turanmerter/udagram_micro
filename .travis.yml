@@ -19,5 +19,9 @@ before_install:
 
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin >/dev/null 2>&1
+  - docker push turanmerter/udacity-restapi-feed
+  - docker push turanmerter/udacity-frontend
+  - docker push turanmerter/udacity-restapi-user
+  - docker push turanmerter/reverseproxy
   
